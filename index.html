@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>ResumUP Talks — OOCSS & Coffeescript</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="OOCSS & Coffeescript">
+		<meta name="author" content="Sergey Efremov, Ekaterina Bulatova">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -169,12 +169,194 @@
 
 					<section>
 						<h2> Because of Rails </h2>
+						<img src="./images/unicorn.jpg" />
 						<p> Thanks to DHH. <a href="https://github.com/rails/rails/commit/9f09aeb8273177fc2d09ebdafcc76ee8eb56fe33">Ruby Drama</a> </p>
 					</section>
 
 					<section>
 						<h2>It's all about sugar</h2>
+						<pre><code>#Coffeescript
+a = (test) ->
+  for t in test
+    t.toUpperCase() unless t?
 
+#Javascript
+var a;
+
+a = function(test) {
+  var t, _i, _len, _results;
+  _results = [];
+  for (_i = 0, _len = test.length; _i < _len; _i++) {
+    t = test[_i];
+    if (t == null) {
+      _results.push(t.toUpperCase());
+    } else {
+      _results.push(void 0);
+    }
+  }
+  return _results;
+};
+
+						</code></pre>
+					</section>
+
+					<section>
+						<h2> Classes & Context </h2>
+							<pre><code>
+class A
+  constructor: ->
+    @options =
+      twitter: 'ok'
+
+  lead: (b) ->
+    jQuery.drop( (event, ui) =>
+      console.log @options
+    )
+
+class B extends A
+  lead: (a, b) ->
+    console.log "Ok"
+							</code></pre>
+						</section>
+					<section>
+						<h2>JavaScript ?</h2>
+						<pre><code>
+var A, B,
+  __hasProp = {}.hasOwnProperty,
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+A = (function() {
+
+  function A() {
+    this.options = {
+      twitter: 'ok'
+    };
+  }
+
+  A.prototype.lead = function(b) {
+    var _this = this;
+    return jQuery.drop(function(event, ui) {
+      return console.log(_this.options);
+    });
+  };
+
+  return A;
+
+})();
+
+B = (function(_super) {
+
+  __extends(B, _super);
+
+  function B() {
+    return B.__super__.constructor.apply(this, arguments);
+  }
+
+  B.prototype.lead = function(a, b) {
+    return console.log("Ok");
+  };
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Sugar, Sugar, Sugar</h2>
+						<ul>
+							<li> iterators </li>
+							<li> if / unless </li>
+							<li> oneliners </li>
+							<li> lambda </li>
+							<li> classes </li>
+							<li> closures </li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Contra</h2>
+						<ul>
+							<li> I don't know it </li>
+							<li> Preproccesing & Compiling </li>
+							<li> Debugging </li>
+							<li> Complex code </li>
+						</ul>
+					</section>
+					<section>
+						<h2>I don't know it</h2>
+						<p>Still Javascript...but with Ruby/Python</p>
+						<pre><code># Assignment:
+number   = 42
+opposite = true
+
+# Conditions:
+number = -42 if opposite
+
+# Functions:
+square = (x) -> x * x
+
+# Arrays:
+list = [1, 2, 3, 4, 5]
+
+# Objects:
+math =
+  root:   Math.sqrt
+  square: square
+  cube:   (x) -> x * square x
+
+# Splats:
+race = (winner, runners...) ->
+  print winner, runners
+
+# Existence:
+alert "I knew it!" if elvis?
+
+# Array comprehensions:
+cubes = (math.cube num for num in list)
+						</code></pre>
+					</section>
+					<section>
+						<h2>Preproccesing & Compiling</h2>
+						<img src="./images/comon.gif" />
+						<p> Frameworks, Templating — that's not our work</p>
+						<p> Sprokets </p>
+					</section>
+					<section>
+						<h2>Debugging</h2>
+						<ul>
+							<li> Tests </li>
+							<li> Source maps </li>
+							<li> Minimalize </li>
+						</ul>
+					</section>
+					<section>
+						<h2>Complex Code</h2>
+						<ul>
+							<li> You should know Javascript </li>
+							<li> Sugar is good, but not enough </li>
+						</ul>
+						<pre><code>
+bind = (ctrl) => -> ctrl.updateScrollbar() if ctrl.updateScrollbar
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Why We use Coffeescript</h2>
+						<h3> Just for fun </h3>
+						<p> And it's more simple — write less do more </p>
+						<p> jQuery isn't about it </p>
+					</section>
+					<section>
+						<h2> Conclusion </h2>
+						<img src="./images/coffee.png"/>
+					</section>
+					<section>
+						<h2> Thanks </h2>
+						<h3> Q & A </h3>
+						<p>
+							<small><a href="http://evilfaeton.com">Sergey Efremov</a> / <a href="http://twitter.com/evilfaeton">@evilfaeton</a></small>
+						</p>
 					</section>
 				</section>
 
